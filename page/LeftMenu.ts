@@ -1,4 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test';
+import { promises } from 'dns';
 
 export class LeftMenu{
 
@@ -7,6 +8,9 @@ export class LeftMenu{
     constructor(page:Page){
 
         this.page= page;
-        
+
+    }
+    async ListItem(item:string):Promise<Locator>{
+        return this.page.locator(`.oxd-main-menu-item:has-text("${item}")`);
     }
 }
