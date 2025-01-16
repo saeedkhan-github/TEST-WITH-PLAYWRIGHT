@@ -1,0 +1,2 @@
+expect(await page.locator('#oxd-toaster_1')).
+//#oxd-toaster_1 id for toast message no record 
