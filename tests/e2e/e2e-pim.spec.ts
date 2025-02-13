@@ -18,14 +18,12 @@ test.describe('PIM Page Tests',()=>{
          expect(await page.locator('h6.oxd-topbar-header-breadcrumb-module').textContent()).toContain('PIM')
     })
 
-    test('Verify Header on PIM page',async({page})=>{
    
+
+    test('Add Employee on PIM Page',async({page})=>{
         await page.waitForLoadState('domcontentloaded');
         const headerList= await page.locator('ul[data-v-5327b38a] li');
         expect(headerList).toHaveText(["Configuration ","Employee List","Add Employee","Reports"]);
-    })
-
-    test('Add Employee on PIM Page',async({page})=>{
         await page.locator('button.oxd-button.oxd-button--secondary').filter({ hasText: "Add" }).click();
          await page.getByRole('button', { name: 'Save' }).click();
          await page.waitForTimeout(2000);
