@@ -18,10 +18,10 @@ test.describe('PIM Page Tests',()=>{
          expect(await page.locator('h6.oxd-topbar-header-breadcrumb-module').textContent()).toContain('PIM')
     })
 
-    test.only('Verify Header on PIM page',async({page})=>{
+    test('Verify Header on PIM page',async({page})=>{
    
-        const headerList= await page.locator('ul[data-v-5327b38a] li');
         await page.waitForLoadState('domcontentloaded');
+        const headerList= await page.locator('ul[data-v-5327b38a] li');
         expect(headerList).toHaveText(["Configuration ","Employee List","Add Employee","Reports"]);
     })
 

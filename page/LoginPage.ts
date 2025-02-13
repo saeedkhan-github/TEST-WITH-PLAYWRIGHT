@@ -15,12 +15,15 @@ export class LoginPage {
   }
 
   async Login(username: string, password: string) {
-    await this.userinput.waitFor({ state: 'visible' });
+    // await this.userinput.waitFor({ state: 'visible' });
     await this.userinput.fill(username);
     await this.passwordinput.fill(password);
-    await Promise.all([
-      this.page.waitForNavigation(),
-      this.submitButton.click(),
-    ]);
+    await this.submitButton.click();
+  }
+
+  async Logout() {
+    await this.page.locator(".oxd-userdropdown-name").click();
+    await this.page.getByRole('menuitem', { name: 'Logout' }).click();
+
   }
 }

@@ -3,19 +3,26 @@ import {test,expect} from "@playwright/test"
 import { LoginPage } from "../../page/LoginPage"
 import { LeftMenu } from "../../page/LeftMenu";
 import { AdminPage } from "../../page/AdminPage";
+import path from 'path';
+
+const authFile = path.join(__dirname, '../.auth/user.json');
+
+test.use({ storageState: authFile});
 test.describe('Admin Page Tests',()=>{
     let loginPage : LoginPage;
     let list: LeftMenu;
     let admin: AdminPage;
     test.beforeEach(async({page})=>{
-        loginPage= new LoginPage(page);
+        // loginPage= new LoginPage(page);
         list= new LeftMenu(page);
         admin= new AdminPage(page);
-        await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-        await loginPage.Login('Admin','admin123')
+       
+        // await loginPage.Login('Admin','admin123')
     })
 
     test('Search for User on Admin Page',async({page})=>{
+        await page.goto('/');
+        await page.waitForLoadState('domcontentloaded');
         let dashboardText =await page.locator('.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module').innerText();
         await expect(dashboardText).toBe('Dashboard')
         // await (await list.ListItem('Admin')).click(); 
