@@ -10,7 +10,7 @@ export class LeftMenu{
         this.page= page;
 
     }
-    async ListItem(item:string):Promise<Locator>{
+     ListItem(item:string):Locator{
         return this.page.locator(`.oxd-main-menu-item:has-text("${item}")`);
     }
 }

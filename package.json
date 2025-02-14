@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:chrom":"playwright test --config=playwright.config.ts --project=Chromium",
-    "test:e2e":"playwright test --config=e2e.config.ts --project=Chromium",
-    "test:webkit":"playwright test --config=playwright.config.ts --project=webkit"
+    "test:chrom": "playwright test --config=playwright.config.ts --project=Chromium",
+    "test:e2e": "playwright test --config=e2e.config.ts --project=Chromium",
+    "test:webkit": "playwright test --config=playwright.config.ts --project=webkit"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,8 @@
   "devDependencies": {
     "@playwright/test": "^1.48.2",
     "@types/node": "^22.9.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   }
 }
