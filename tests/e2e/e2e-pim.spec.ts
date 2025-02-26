@@ -15,7 +15,8 @@ test.describe('PIM Page Tests',()=>{
         // await loginPage.Login('Admin','admin123');
         await page.waitForLoadState('domcontentloaded');
          await list.ListItem('PIM').click(); // pass any left menu item,admin,PIM, Leave, Time, to click on the item
-         expect(await page.locator('h6.oxd-topbar-header-breadcrumb-module').textContent()).toContain('PIM')
+         await page.waitForSelector('h6.oxd-topbar-header-breadcrumb-module');
+         expect(await page.locator('h6.oxd-topbar-header-breadcrumb-module').textContent()).toContain('PIM');
     })
 
    
