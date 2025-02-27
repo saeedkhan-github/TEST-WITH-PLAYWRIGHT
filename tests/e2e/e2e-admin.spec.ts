@@ -33,7 +33,7 @@ test.describe('Admin Page Tests',()=>{
         await page.locator('button[type="submit"]').click();
         await page.waitForSelector('#oxd-toaster_1');
         let toastmsg= await page.locator('#oxd-toaster_1').textContent();
-        expect(toastmsg).toContain('No Records Founding');
+        expect(toastmsg).toContain('No Records Found');
 
     })
 })
