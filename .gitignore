@@ -4,3 +4,6 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /tests/.auth/
+/allure-report/
+/allure-results/
+json-test-results.json
