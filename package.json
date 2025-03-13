@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "npm run build && npx playwright test",
+    "test": "playwright test",
+    "test:ci": "npm run build && playwright test",
     "test:chrom": "playwright test --config=playwright.config.ts --project=Chromium",
     "test:e2e": "playwright test --config=e2e.config.ts --project=Chromium",
     "test:webkit": "playwright test --config=playwright.config.ts --project=webkit",

@@ -31,7 +31,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --config=playwright.config.js || true
+        run:  npm run test:ci
 
       # Generate Allure Report
       - name: Generate Allure Report

@@ -5,12 +5,12 @@ import path from 'path';
 import { json } from 'stream/consumers';
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 const authFile = path.join(__dirname, 'tests/.auth/user.json');
-
+const testDir = process.env.CI ? './build/tests' : './tests';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
