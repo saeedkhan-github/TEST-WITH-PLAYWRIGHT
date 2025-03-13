@@ -10,7 +10,7 @@ const authFile = path.join(__dirname, 'tests/.auth/user.json');
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './build/tests',
+  testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -37,7 +37,10 @@ export default defineConfig({
   projects: [
     {
       name: 'setup',
-      testMatch: /.*\.setup\.ts/,
+      testMatch:[ 
+        /.*\.setup\.ts/,
+        /.*\.setup\.js/,
+      ],
     },
     {
       name: 'chromium',
