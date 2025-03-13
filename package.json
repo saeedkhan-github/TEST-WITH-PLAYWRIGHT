@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "test": "npm run build && playwright test",
     "test:chrom": "playwright test --config=playwright.config.ts --project=Chromium",
     "test:e2e": "playwright test --config=e2e.config.ts --project=Chromium",
     "test:webkit": "playwright test --config=playwright.config.ts --project=webkit",

@@ -22,12 +22,16 @@ jobs:
      
       - name: Install dependencies
         run: npm ci
+      
+        # Build TypeScript project
+      - name: Build TypeScript project
+        run: npm run build
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test || true
+        run: npx playwright test --config=playwright.config.js || true
 
       # Generate Allure Report
       - name: Generate Allure Report

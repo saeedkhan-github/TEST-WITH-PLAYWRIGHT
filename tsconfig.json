@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "commonjs",
+      "outDir": "./build", // Output directory for compiled JS files
+      "rootDir": "./",     // Root directory for TS files (current directory)
+      "strict": true,
+      "esModuleInterop": true
+    },
+    "include": ["**/*.ts"], // Include all TypeScript files in the project
+    "exclude": ["node_modules"] // Exclude node_modules
+  }

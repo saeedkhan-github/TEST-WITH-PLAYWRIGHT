@@ -7,3 +7,4 @@ node_modules/
 /allure-report/
 /allure-results/
 json-test-results.json
+build/
