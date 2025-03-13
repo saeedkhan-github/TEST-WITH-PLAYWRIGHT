@@ -15,7 +15,7 @@ test.describe("Validate Login Functionality", () => {
         });
         page = await context.newPage();
         loginPage = new LoginPage(page);
-        await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+        await page.goto('/');
         await page.waitForLoadState();
     });
 
@@ -29,7 +29,7 @@ test.describe("Validate Login Functionality", () => {
     });
 
     test('Verify successful Login with valid credentials and logout', async () => {
-        await loginPage.Login('Admin', 'admin123');
+        await loginPage.Login(process.env.adminUser as string,process.env.adminPassword as string);
         await loginPage.Logout();
         await expect(page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
     });
