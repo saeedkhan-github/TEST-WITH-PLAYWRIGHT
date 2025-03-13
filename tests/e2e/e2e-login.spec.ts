@@ -1,4 +1,4 @@
-import { test, expect, BrowserContext } from "@playwright/test";
+import { test, expect, BrowserContext ,Page} from "@playwright/test";
 import { LoginPage } from "../../page/LoginPage";
 
 // Ensure no stored session state
@@ -7,7 +7,7 @@ test.use({ storageState: undefined });
 test.describe("Validate Login Functionality", () => {
     let context: BrowserContext;
     let loginPage: LoginPage;
-    let page;
+    let page:Page;
 
     test.beforeEach(async ({ browser }) => {
         context = await browser.newContext({
