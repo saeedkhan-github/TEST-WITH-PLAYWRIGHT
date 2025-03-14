@@ -1,0 +1,83 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: PIM Page Tests >> Add Employee on PIM Page
+- Location: /home/runner/work/TEST-WITH-PLAYWRIGHT/TEST-WITH-PLAYWRIGHT/build/tests/e2e/e2e-pim.spec.js:18:20
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('.oxd-main-menu-item:has-text("PIM")')
+
+    at /home/runner/work/TEST-WITH-PLAYWRIGHT/TEST-WITH-PLAYWRIGHT/build/tests/e2e/e2e-pim.spec.js:14:36
+```
+
+# Page snapshot
+
+```yaml
+- img "company-branding"
+- heading "Login" [level=5]
+- paragraph: "Username : Admin"
+- paragraph: "Password : admin123"
+- text:  Username
+- textbox "Username"
+- text:  Password
+- textbox "Password"
+- button "Login"
+- paragraph: Forgot your password?
+- link
+- link
+- link
+- link
+- paragraph: OrangeHRM OS 5.7
+- paragraph:
+  - text: © 2005 - 2025
+  - link "OrangeHRM, Inc"
+  - text: . All rights reserved.
+- img "orangehrm-logo"
+```
+
+# Test source
+
+```ts
+   1 | "use strict";
+   2 | Object.defineProperty(exports, "__esModule", { value: true });
+   3 | const test_1 = require("@playwright/test");
+   4 | const LeftMenu_1 = require("../../page/LeftMenu");
+   5 | test_1.test.describe('PIM Page Tests', () => {
+   6 |     let loginPage;
+   7 |     let list;
+   8 |     test_1.test.beforeEach(async ({ page }) => {
+   9 |         // loginPage= new LoginPage(page);
+  10 |         list = new LeftMenu_1.LeftMenu(page);
+  11 |         await page.goto('/');
+  12 |         // await loginPage.Login('Admin','admin123');
+  13 |         await page.waitForLoadState('domcontentloaded');
+> 14 |         await list.ListItem('PIM').click(); // pass any left menu item,admin,PIM, Leave, Time, to click on the item
+     |                                    ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  15 |         await page.waitForSelector('h6.oxd-topbar-header-breadcrumb-module');
+  16 |         (0, test_1.expect)(await page.locator('h6.oxd-topbar-header-breadcrumb-module').textContent()).toContain('PIM');
+  17 |     });
+  18 |     (0, test_1.test)('Add Employee on PIM Page', async ({ page }) => {
+  19 |         await page.waitForLoadState('domcontentloaded');
+  20 |         const headerList = await page.locator('ul[data-v-5327b38a] li');
+  21 |         (0, test_1.expect)(headerList).toHaveText(["Configuration ", "Employee List", "Add Employee", "Reports"]);
+  22 |         await page.locator('button.oxd-button.oxd-button--secondary').filter({ hasText: "Add" }).click();
+  23 |         await page.getByRole('button', { name: 'Save' }).click();
+  24 |         await page.waitForTimeout(2000);
+  25 |         (0, test_1.expect)(await page.getByPlaceholder('First Name')).toHaveClass(/oxd-input--error/);
+  26 |         (0, test_1.expect)(await page.getByPlaceholder('Last Name')).toHaveClass(/oxd-input--error/);
+  27 |         // expect(await page.getByLabel('Last Name')).toHaveClass('oxd-input--error');
+  28 |         await (0, test_1.expect)(page.locator('.oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message').nth(0)).toHaveText('Required');
+  29 |         await (0, test_1.expect)(page.locator('.oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message').nth(0)).toHaveText('Required');
+  30 |     });
+  31 | });
+  32 |
+```
