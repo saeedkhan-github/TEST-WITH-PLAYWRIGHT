@@ -3,7 +3,7 @@ import { promises } from 'dns';
 
 export class LeftMenu{
 
-    readonly listItem: Locator;
+    // readonly listItem: Locator;
     readonly page: Page;
     constructor(page:Page){
 

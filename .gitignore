@@ -3,8 +3,8 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-/tests/.auth/
 /allure-report/
 /allure-results/
-json-test-results.json
+/tests/.auth/
 /build/
+json-test-results.json

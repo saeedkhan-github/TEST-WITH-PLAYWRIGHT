@@ -23,11 +23,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      
+        # Build TypeScript project
+      - name: Build TypeScript project
+        run: npm run build
+
+      - name: Install Playwright
+        run: npx playwright install
 
       - name: Run Playwright tests
-        run: npx playwright test || true
+        run:  npm run test:ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
 
       # Generate Allure Report
       - name: Generate Allure Report
