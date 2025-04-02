@@ -2,7 +2,6 @@ import { defineConfig, devices } from '@playwright/test';
 import fs from 'fs';
 import dotenv from 'dotenv';
 import path from 'path';
-import { json } from 'stream/consumers';
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 const authFile = path.join(__dirname, 'tests/.auth/user.json');
 
