@@ -16,7 +16,9 @@ export class LoginPage {
 
   async Login(username: string, password: string) {
     await this.page.waitForLoadState('domcontentloaded');
-    await this.page.waitForSelector('input[placeholder="Username"]', { state: 'visible' });
+    // await this.page.waitForSelector('input[placeholder="Username"]', { state: 'visible' });
+    await this.userinput.waitFor({ state: 'visible' });
+    await this.passwordinput.waitFor({ state: 'visible' });
     await this.page.waitForSelector('input[placeholder="Password"]', { state: 'visible' });
     // await this.userinput.waitFor({ state: 'visible' });
     await this.userinput.fill(username);
