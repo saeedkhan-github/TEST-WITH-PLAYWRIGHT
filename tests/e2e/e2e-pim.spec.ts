@@ -3,10 +3,10 @@ import { LoginPage } from "../../page/LoginPage"
 import { LeftMenu } from "../../page/LeftMenu";
 import exp from "constants";
 
-
+test.use({ trace: 'on-first-retry' });
 test.describe('PIM Page Tests',()=>{
     let loginPage : LoginPage;
-    let list: LeftMenu;
+    let list: LeftMenu;  
     test.beforeEach(async({page})=>{
 
         // loginPage= new LoginPage(page);

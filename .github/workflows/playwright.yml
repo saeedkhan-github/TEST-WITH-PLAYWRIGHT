@@ -32,7 +32,16 @@ jobs:
 
       - name: Run Playwright tests
         run:  npm run test:ci
+      
+      - name: Upload Playwright Traces
+        if: always()  # Upload traces even if tests fail
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: test-results/**/*.zip  # Ensure correct trace path
+          retention-days: 7  # Keep for 7 days
 
+      
       # Generate Allure Report
       - name: Generate Allure Report
         if: always()
