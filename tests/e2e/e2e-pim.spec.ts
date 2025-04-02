@@ -26,8 +26,9 @@ test.describe('PIM Page Tests',()=>{
         const headerList= await page.locator('ul[data-v-5327b38a] li');
         expect(headerList).toHaveText(["Configuration ","Employee List","Add Employee","Reports"]);
         await page.locator('button.oxd-button.oxd-button--secondary').filter({ hasText: "Add" }).click();
-         await page.getByRole('button', { name: 'Save' }).click();
-         await page.waitForTimeout(2000);
+        await expect(page.getByRole('button', { name: 'Save' })).toBeVisible();
+        await page.getByRole('button', { name: 'Save' }).click();
+        await page.waitForTimeout(2000);
         expect(await page.getByPlaceholder('First Name')).toHaveClass(/oxd-input--error/);
         expect(await page.getByPlaceholder('Last Name')).toHaveClass(/oxd-input--error/);
         // expect(await page.getByLabel('Last Name')).toHaveClass('oxd-input--error');
