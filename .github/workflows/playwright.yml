@@ -2,9 +2,9 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [ main, master, build ]
+    branches: [master, reporting, build ]
   pull_request:
-    branches: [ main, master, build ]
+    branches: [master, reporting,build ]
 
 jobs:
   test:

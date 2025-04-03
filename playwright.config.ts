@@ -11,7 +11,7 @@ const testDir = process.env.CI ? './build/tests' : './tests';
  */
 export default defineConfig({
   testDir,
-  timeout: 60 *1000,
+  timeout: 30 *1000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
