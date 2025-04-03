@@ -9,9 +9,9 @@
     "test:ci": "npm run clean && npm run build && playwright test",
     "test:chrom": "playwright test --config=playwright.config.ts --project=Chromium",
     "test:e2e": "playwright test --config=e2e.config.ts --project=Chromium",
-    "clean:allure": "rm -rf allure-results allure-report"
+    "clean:allure": "rm -rf allure-results allure-report",
     "test:webkit": "playwright test --config=playwright.config.ts --project=webkit",
-    "report": "playwright test npx allure generate allure-results --clean -o allure-report && npx allure open allure-report",
+    "report": "playwright test npx allure generate allure-results --clean -o allure-report && npx allure open allure-report"
   },
   "keywords": [],
   "author": "",

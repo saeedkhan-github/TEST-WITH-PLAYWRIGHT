@@ -55,9 +55,11 @@ jobs:
       # Deploy Allure Report to GitHub Pages
       - name: Deploy Allure Report to GitHub Pages
         if: always()
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
+          publish_branch: gh-pages
+          force_orphan: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
