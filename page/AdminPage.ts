@@ -6,7 +6,7 @@ export class AdminPage {
   // Locators
 
   readonly searchInputField: Locator;
-  readonly submitSearch: Locator;
+  // readonly submitSearch: Locator;
 
 
   constructor(page: Page) {

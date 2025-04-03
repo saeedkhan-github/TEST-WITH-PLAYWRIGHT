@@ -1,8 +1,11 @@
 import {test,expect} from "@playwright/test"
 import { LoginPage } from "../../page/LoginPage"
 import { LeftMenu } from "../../page/LeftMenu";
-import exp from "constants";
+import path from 'path';
 
+const authFile = path.join(__dirname, '../.auth/user.json');
+
+test.use({ storageState: authFile});
 
 test.describe('PIM Page Tests',()=>{
     let loginPage : LoginPage;
