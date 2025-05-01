@@ -4,7 +4,9 @@ import dotenv from 'dotenv';
 import path from 'path';
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 const authFile = path.join(__dirname, 'tests/.auth/user.json');
-const testDir = process.env.CI ? './build/tests' : './tests';
+const testDir = process.env.CI 
+  ? (fs.existsSync('./build/tests') ? './build/tests' : './tests')
+  : './tests';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
