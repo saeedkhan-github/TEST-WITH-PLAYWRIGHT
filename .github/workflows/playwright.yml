@@ -5,7 +5,7 @@ on:
     branches: [ main, master, reporting, workflow_dispatch ]
 
   pull_request:
-    branches: [master, reporting, build ]
+    branches: [main, master, reporting, workflow_dispatch]
 
 jobs:
   test:
@@ -20,14 +20,24 @@ jobs:
         with:
           node-version: lts/*
 
-     
+      # Add cache steps before installing dependencies
+      - name: Cache node modules
+        uses: actions/cache@v4
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
+        # Only run npm ci if cache miss
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
 
-      
-        # Build TypeScript project
-      - name: Build TypeScript project
-        run: npm run build
+      # Build TypeScript project
+      # - name: Build TypeScript project
+      #   run: npm run build
 
       - name: Install Playwright
         run: npx playwright install
@@ -45,7 +55,7 @@ jobs:
         if: always()
         run: npx allure generate allure-results --clean -o allure-report
 
-      # Upload Allure Report as an artifact (optional, for download)
+      # Upload Allure Report as an artifact
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
