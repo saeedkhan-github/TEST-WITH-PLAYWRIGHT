@@ -17,7 +17,7 @@ setup('authenticate', async ({ page }) => {
   await page.goto('/');
   
   const loginPage = new LoginPage(page);
-  await loginPage.Login('Admin', 'admin123');
+  await loginPage.Login(process.env.adminUser as string, process.env.adminPassword as string);
 
   await page.context().storageState({ path: authFile });
   console.log('Auth state saved.');
