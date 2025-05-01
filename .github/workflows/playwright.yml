@@ -43,7 +43,7 @@ jobs:
         run: npx playwright install
 
       - name: Run Playwright tests
-        run:  npm run test:ci
+        run:  npm run test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
