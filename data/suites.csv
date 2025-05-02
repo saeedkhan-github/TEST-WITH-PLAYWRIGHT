@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2378","authenticate","setup","Fri May 02 06:56:18 UTC 2025","passed","Fri May 02 06:56:20 UTC 2025","","e2e/auth.setup.ts","",""
+"","5552","Add Employee on PIM Page","chromium","Fri May 02 06:56:24 UTC 2025","passed","Fri May 02 06:56:30 UTC 2025","PIM Page Tests","e2e/e2e-pim.spec.ts","",""
+"","2344","Verify Login with invalid credentials","chromium","Fri May 02 06:56:21 UTC 2025","passed","Fri May 02 06:56:23 UTC 2025","Validate Login Functionality","e2e/e2e-login.spec.ts","",""
+"","3374","Verify successful Login with valid credentials and logout","chromium","Fri May 02 06:56:23 UTC 2025","passed","Fri May 02 06:56:27 UTC 2025","Validate Login Functionality","e2e/e2e-login.spec.ts","",""
+"","2905","Search for User on Admin Page","chromium","Fri May 02 06:56:21 UTC 2025","passed","Fri May 02 06:56:24 UTC 2025","Admin Page Tests","e2e/e2e-admin.spec.ts","",""
