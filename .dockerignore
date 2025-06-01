@@ -1,0 +1,22 @@
+node_modules
+allure-report
+allure-results
+test-results
+playwright-report
+*.log
+.git
+.gitignore
+Dockerfile
+dist
+build
+*.tsbuildinfo
+# .env*
+*.md
+*.zip
+*.tgz
+coverage
+npm-debug.log
+.yarn
+.yarnrc.yml
+.idea
+.vscode
