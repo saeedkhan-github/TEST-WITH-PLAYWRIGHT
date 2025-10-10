@@ -8,3 +8,4 @@ node_modules/
 /tests/.auth/
 /build/
 json-test-results.json
+.env

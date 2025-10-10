@@ -11,6 +11,9 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      # Ensure API_KEY is defined in repository secrets before using
+      API_KEY: ${{ secrets.API_KEY }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
