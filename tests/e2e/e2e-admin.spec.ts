@@ -16,8 +16,6 @@ test.describe('Admin Page Tests',()=>{
         // loginPage= new LoginPage(page);
         list= new LeftMenu(page);
         admin= new AdminPage(page);
-       
-        // await loginPage.Login('Admin','admin123')
     })
 
     test('Search for User on Admin Page',async({page})=>{
@@ -29,7 +27,7 @@ test.describe('Admin Page Tests',()=>{
         await list.ListItem('Admin').click(); // pass any left menu item,admin,PIM, Leave, Time, to click on the item
         expect(await page.locator('.oxd-topbar-header-title').textContent()).toContain('User Management')
         // await page.locator('//div[@class="oxd-input-group oxd-input-field-bottom-space"]//div//input[@class="oxd-input oxd-input--active"]').fill('Zyed');
-        await admin.getSearchInputLocator('zyed')
+        await admin.getSearchInputLocator('zyed')   // Page Object Model AdminPage.ts method call
         await page.locator('button[type="submit"]').click();
         await page.waitForSelector('#oxd-toaster_1');
         let toastmsg= await page.locator('#oxd-toaster_1').textContent();
@@ -37,6 +35,3 @@ test.describe('Admin Page Tests',()=>{
 
     })
 })
-
-
-//#oxd-toaster_1 id for toast message no record 

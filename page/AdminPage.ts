@@ -20,19 +20,19 @@ export class AdminPage {
   }
 
   // Add a new user
-//   async addUser(
-//     username: string,
-//     userRole: string,
-//     employeeName: string,
-//     status: string
-//   ) {
-//     await this.addUserButton.click();
-//     await this.usernameInput.fill(username);
-//     await this.userRoleDropdown.selectOption(userRole); // e.g., '1' for Admin
-//     await this.employeeNameInput.fill(employeeName);
-//     await this.statusDropdown.selectOption(status); // e.g., '1' for Enabled
-//     await this.saveButton.click();
-//   }
+  async addUser(
+    username: string,
+    userRole: string,
+    employeeName: string,
+    status: string
+  ) {
+    await this.addUserButton.click();
+    await this.usernameInput.fill(username);
+    await this.userRoleDropdown.selectOption(userRole); // e.g., '1' for Admin
+    await this.employeeNameInput.fill(employeeName);
+    await this.statusDropdown.selectOption(status); // e.g., '1' for Enabled
+    await this.saveButton.click();
+  }
 
   // Get success message
 //   async getSuccessMessage() {
