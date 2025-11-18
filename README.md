@@ -3,7 +3,8 @@ using typescript.
 
 Clone the Repo: https://github.com/saeedkhan-github/TEST-WITH-PLAYWRIGHT
 
-Run npm install 
+Run: 
+npm install 
 run npx playwright install  // to install the browser drivers
 run npm run test
 npx allure generate allure-results --clean -o allure-report
