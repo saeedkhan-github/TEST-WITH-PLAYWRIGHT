@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5621","Verify successful Login with valid credentials and logout","chromium","Mon Mar 23 14:40:04 UTC 2026","passed","Mon Mar 23 14:40:10 UTC 2026","Validate Login Functionality","e2e/e2e-login.spec.ts","",""
+"","6574","Search for User on Admin Page","chromium","Mon Mar 23 14:40:00 UTC 2026","passed","Mon Mar 23 14:40:07 UTC 2026","Admin Page Tests","e2e/e2e-admin.spec.ts","",""
+"","7997","Add Employee on PIM Page","chromium","Mon Mar 23 14:40:07 UTC 2026","passed","Mon Mar 23 14:40:15 UTC 2026","PIM Page Tests","e2e/e2e-pim.spec.ts","",""
+"","4335","Verify Login with invalid credentials","chromium","Mon Mar 23 14:40:00 UTC 2026","passed","Mon Mar 23 14:40:04 UTC 2026","Validate Login Functionality","e2e/e2e-login.spec.ts","",""
+"","0","can login and verify email address with mailslurp","chromium","Mon Mar 23 14:40:07 UTC 2026","skipped","Mon Mar 23 14:40:07 UTC 2026","test email login with playwright","e2e/e2e-mailslurp.spec.ts","",""
+"","2334","authenticate","setup","Mon Mar 23 14:39:57 UTC 2026","passed","Mon Mar 23 14:39:59 UTC 2026","","e2e/auth.setup.ts","",""
