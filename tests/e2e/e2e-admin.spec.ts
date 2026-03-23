@@ -14,13 +14,14 @@ test.describe('Admin Page Tests',()=>{
     let admin: AdminPage;
     test.beforeEach(async({page})=>{
         // loginPage= new LoginPage(page);
+        await page.goto('https://opensource-demo.orangehrmlive.com');
+        await page.waitForLoadState('domcontentloaded');
         list= new LeftMenu(page);
         admin= new AdminPage(page);
     })
 
     test('Search for User on Admin Page',async({page})=>{
-        await page.goto('/');
-        await page.waitForLoadState('domcontentloaded');
+       
         let dashboardText =await page.locator('.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module').innerText();
         await expect(dashboardText).toBe('Dashboard')
         // await (await list.ListItem('Admin')).click(); 

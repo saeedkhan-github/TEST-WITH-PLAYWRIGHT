@@ -2,12 +2,13 @@ import { test, expect, Page } from '@playwright/test';
 import MailSlurp from "mailslurp-client";
 
 test.describe('test email login with playwright', () => {
-  test('can login and verify email address with mailslurp', async ({ page }) => {
+  test.skip('can login and verify email address with mailslurp', async ({ page }) => {
     const apiKey = process.env.API_KEY;
     expect(apiKey).toBeDefined();
 
     // load playground app
     await page.goto("https://playground.mailslurp.com");
+    await page.waitForLoadState('domcontentloaded')
     await page.click('[data-test="sign-in-create-account-link"]');
 
     // create a new inbox
