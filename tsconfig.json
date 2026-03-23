@@ -2,7 +2,7 @@
     "compilerOptions": {
       "target": "ESNext",
       "module": "commonjs",
-      "moduleResolution": "node",
+      // "moduleResolution": "node",
       "outDir": "./build", // Output directory for compiled JS files
       "rootDir": "./",     // Root directory for TS files (current directory)
       "strict": true,
